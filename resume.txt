@@ -1,0 +1,25 @@
+TP Athentification avec React-Firebase
+
+1- Initialisation de notre espace de travail
+    - On lance la commande suivante: npx create-react-app auth-react-firebase
+      auth-react-firebase represente le nom du dossier projet
+
+    - On cree un nouveau projet sur le site de firebase. Dans notre cas c'est:
+      react-auth-rrv6
+
+    - On supprime les fichiers inutile generer par create-react-app et on laisse les fichiers
+      suivant: 
+        . dossier src: App.css, App.js, index.css, index.js
+        . dossier public: index.html, 
+    
+    - On cree un fichier firebase.config.js dans lequel on va mettre le code de connexion a notre
+      projet ou backend firebase.
+    
+    - Dans src, on cree un fichier .env.local.js dans lequel on met nos variable d'environment qu'on
+      utilisera en suite dans firebase.config.js
+
+2- installation de react-router
+    nmp install react-router-dom
+
+    - On importe react-router-dom dans App.js: import {Routes, Route} from "react-router-dom"
+    
