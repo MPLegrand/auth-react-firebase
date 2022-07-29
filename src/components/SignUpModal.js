@@ -1,9 +1,12 @@
 import React, { useContext, useRef, useState } from 'react'
 import { UserContext } from '../context/userContext'
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUpModal() {
 
     const { modalState, toggleModals, signUp } = useContext(UserContext);
+
+    const navigate = useNavigate();
 
     const [valadation, setValidation] = useState('');
 
@@ -42,11 +45,17 @@ export default function SignUpModal() {
             //51:38 on remet notre formulaire a zero/we reset our form
             formRef.current.reset()
             setValidation("")
+            
+            //01:10:33 on ferme la modal avant la navigation/we close the modal before the navigation
+            toggleModals("close")
 
-            console.log(cred);
+            // console.log(cred);
+            //une fois qu'on est connecter, on navige vers.../Once you are connected, you navigate to
+            navigate("/private/private-home");
 
         } catch (error) {
 
+            //54:00 on recupere et on traite l'erreur renvoye par firebase
             if (error.code === "auth/invalid-email") {
                 setValidation("Email format invalid")               
             }
