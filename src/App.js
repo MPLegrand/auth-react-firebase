@@ -9,9 +9,9 @@ import PrivateHome  from "./pages/Private/PrivateHome/PrivateHome";
 function App() {
   return (
     <>
+      <NavBar />
       <SignUpModal />
       <SignInModal />
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/private" element={<Private />}>

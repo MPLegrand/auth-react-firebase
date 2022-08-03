@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+//nous permet de nous authentifier quand on va utiliser des methodes
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration

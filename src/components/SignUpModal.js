@@ -4,16 +4,24 @@ import { useNavigate } from 'react-router-dom';
 
 export default function SignUpModal() {
 
+    /**
+     * 32:37 on instentie notre contexte et on recupere ce qu'on veut
+     * we initialize our context and we get what we want
+     */
     const { modalState, toggleModals, signUp } = useContext(UserContext);
 
     const navigate = useNavigate();
 
     const [valadation, setValidation] = useState('');
 
-    //40:00 on cree un tableau de reference pour les inputs
+    //40:00 on cree un tableau de reference pour les inputs/we create a reference table for the inputs
     const inputs = useRef([])
-    //40:00 on cree une fonction qui va remplir le tableau
+    //40:00 on cree une fonction qui va remplir le tableau/we create a function that will fill the array
     const addInputs = el => {
+        /**
+         *si l'element existe et qu'il n'est pas deja dans mon tableau, on le rajoute dedans 
+         *if the element exists and it is not already in my array, we add it inside
+         */
         if (el && !inputs.current.includes(el)) {
             inputs.current.push(el);
         }
@@ -41,6 +49,7 @@ export default function SignUpModal() {
                 inputs.current[0].value,
                 inputs.current[1].value
             )
+            // console.log(cred);
             
             //51:38 on remet notre formulaire a zero/we reset our form
             formRef.current.reset()
@@ -49,7 +58,6 @@ export default function SignUpModal() {
             //01:10:33 on ferme la modal avant la navigation/we close the modal before the navigation
             toggleModals("close")
 
-            // console.log(cred);
             //une fois qu'on est connecter, on navige vers.../Once you are connected, you navigate to
             navigate("/private/private-home");
 
@@ -75,6 +83,7 @@ export default function SignUpModal() {
     <>
         {modalState.SignUpModal && (
             <div className="position-fixed top-0 vw-100 vh-100">
+                {/* notre overlay qui sert a rajouter un fond sombre/Our overlay which is used to add a dark background */}
                 <div 
                 onClick={closeModal} 
                 className="w-100 h-100 bg-dark bg-opacity-75">

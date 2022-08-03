@@ -29,6 +29,8 @@ const logOut = async () => {
             AuthJS
         </Link>
         <div>
+            {/* 37:25 On met dans onClick une fonction anonyme ()=> qui appelle toggleModals() 
+            pour eviter l'appel de toggleModals() au moment du chargement de notre page */}
             <button onClick={() => toggleModals("signUp")} className="btn btn-primary">
                 Sign Up
             </button>
